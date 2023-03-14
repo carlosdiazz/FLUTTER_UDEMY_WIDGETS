@@ -9,7 +9,9 @@ class CustomInpuutField extends StatelessWidget {
       this.icon,
       this.suffixIcon,
       this.keyBoardType,
-      this.oscuredText = false});
+      this.oscuredText = false,
+      required this.formProperty,
+      required this.formValues});
 
   final String? hintText;
   final String? labelText;
@@ -18,6 +20,8 @@ class CustomInpuutField extends StatelessWidget {
   final IconData? suffixIcon;
   final TextInputType? keyBoardType;
   final bool oscuredText;
+  final String formProperty;
+  final Map<String, String> formValues;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,9 @@ class CustomInpuutField extends StatelessWidget {
       keyboardType: keyBoardType,
       initialValue: '',
       textCapitalization: TextCapitalization.words,
-      onChanged: (value) {},
+      onChanged: (value) {
+        formValues[formProperty] = value;
+      },
       validator: (value) {
         if (value == null) return 'Requerido';
         return value.length < 3 ? 'Minimo 3' : null;

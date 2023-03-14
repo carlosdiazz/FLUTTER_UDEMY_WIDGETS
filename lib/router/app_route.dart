@@ -54,6 +54,18 @@ class AppRoute {
       name: 'Input Fields Pages',
       screen: const InputFieldPages(),
       icon: Icons.input,
+    ),
+    MenuOption(
+      route: 'sliders',
+      name: 'Sliders Page',
+      screen: const SliderPages(),
+      icon: Icons.sign_language,
+    ),
+    MenuOption(
+      route: 'listviewbuilder',
+      name: 'List View Builder Page',
+      screen: const ListViewBuilderPages(),
+      icon: Icons.build_circle,
     )
   ];
 
